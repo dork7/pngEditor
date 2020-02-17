@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Image border generator</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="menu_container">
+				<div class="form_group">
+					<label for="open">Choose file to upload</label>
+					<input
+						type="file"
+						name="open"
+						id="open"
+						onchange="onImageChange(event)"
+					/>
+				</div>
+				<div class="from-group">
+					<label for="backgroundColor">Background Color</label>
+					<input
+						type="color"
+						name="backgroundColor"
+						id="backgroundColor"
+						value="#f5f5dc"
+						onchange="changeBackground(this.value)"
+					/>
+				</div>
+				<div class="form_group">
+					<label for="borderSize">Border Size</label>
+					<input
+						type="number"
+						name="borderSize"
+						id="borderSize"
+						min="0"
+						value="2"
+						onchange="onInputChange('borderSize', this.value)"
+					/>
+				</div>
+				<div class="from-group">
+					<label for="borderColor">Border Color</label>
+					<input
+						type="color"
+						name="borderColor"
+						id="borderColor"
+						value="#ffffff"
+						onchange="onInputChange('borderColor', this.value)"
+					/>
+				</div>
+				<div class="form_group">
+					<label for="shadowSize">Shadow Size</label>
+					<input
+						type="number"
+						name="shadowSize"
+						id="shadowSize"
+						min="0"
+						value="4"
+						onchange="onInputChange('shadowSize', this.value)"
+					/>
+				</div>
+				<div class="from-group">
+					<label for="shadowColor">Shadow Color</label>
+					<input
+						type="color"
+						name="shadowColor"
+						id="shadowColor"
+						value="#000000"
+						onchange="onInputChange('shadowColor', this.value)"
+					/>
+				</div>
+				<div class="from-group">
+					<label for="shadowAlpha">Shadow Transparency</label>
+					<input
+						type="number"
+						name="shadowAlpha"
+						id="shadowAlpha"
+						value="2"
+						min="0"
+						max="255"
+						onchange="onInputChange('shadowAlpha', this.value)"
+					/>
+				</div>
+				<div class="from-group">
+					<label for="alphaThreshold">Transparency Threshold</label>
+					<input
+						type="number"
+						name="alphaThreshold"
+						id="alphaThreshold"
+						min="0"
+						max="255"
+						value="0"
+						onchange="onInputChange('alphaThreshold', this.value)"
+					/>
+				</div>
+				<div class="form-group">
+					<button onclick="download()">Download</button>
+				</div>
+			</div>
+			<div class="canvas_container" id="background">
+				<canvas id="canvas" />
+			</div>
+		</div>
+		<script src="src/app.js"></script>
+	</body>
+</html>
